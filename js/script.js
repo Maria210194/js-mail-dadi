@@ -55,13 +55,13 @@ buttonDado.addEventListener('click', function () {
     }
     else if (dadoGiocatore < dadoComputer) {
         console.log('Hai perso')
-        document.getElementById('dadoGiocatore').innerText = ('Hai perso' + 'il tuo numero è: ' + dadoGiocatore);
+        document.getElementById('dadoGiocatore').innerText = ('il tuo numero è: ' + dadoGiocatore);
         document.getElementById('dadoComputer').innerText = ('il numero del computer è: ' + dadoComputer);
         document.getElementById('responseDado').innerText = ('Hai perso!')
     }
     else {
         console.log('Pareggio');
-        document.getElementById('dadoGiocatore').innerText = ('Pareggio, ritenta!' + 'il tuo numero è: ' + dadoGiocatore);
+        document.getElementById('dadoGiocatore').innerText = ('il tuo numero è: ' + dadoGiocatore);
         document.getElementById('dadoComputer').innerText = ('il numero del computer è: ' + dadoComputer);
         document.getElementById('responseDado').innerText = ('Pareggio!')
     }
