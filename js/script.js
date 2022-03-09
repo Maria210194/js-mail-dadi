@@ -1,23 +1,27 @@
-console.log('OK JS')
+// Chiedere all'utente la sua email, verificare se presente nella lista e restituire l'esito
 
-const database = ['mary@gmail.com', 'rosa@gmail.com', 'sara@gmail.com', 'claudia@gmail.com'];
-const userEmail = document.getElementById('userEmail');
+const database = ["mary@gmail.com", "rosa@gmail.com", "sara@gmail.com", "claudia@gmail.com"];
 const button = document.getElementById('buttonVerify');
+const userEmail = document.getElementById('userEmail');
+let check = false;
+
 
 button.addEventListener('click', function () {
-    for (let i = 0; i < database.length; i++)
-        if (userEmail == database[i]) {
-            console.log('Access allowed')
-            break;
+    console.log(userEmail.value)
+
+    for (let i = 0; i < database.length; i++) {
+        if (userEmail.value === database[i]) {
+            check = true;
+            console.log('Access allowed');
+            document.getElementById('response').innerText = 'Access allowed';
         }
-        else {
-            console.log('Access denied')
-            break;
-        }
+    }
+
+    if (check === false) {
+        console.log('Access denied');
+        document.getElementById('response').innerText = 'Access denied';
+    }
 }
 );
 
-/*
-for (let i = 0; i < database.length; i++) {
-    console.log(database[i])
-} */
+
