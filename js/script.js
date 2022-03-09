@@ -1,9 +1,12 @@
 // Chiedere all'utente la sua email, verificare se presente nella lista e restituire l'esito
 
 const database = ["mary@gmail.com", "rosa@gmail.com", "sara@gmail.com", "claudia@gmail.com"];
-const button = document.getElementById('buttonVerify');
+let button = document.getElementById('buttonVerify');
 const userEmail = document.getElementById('userEmail');
 let check = false;
+let responseEmail = document.querySelector('.responseEmail');
+
+
 
 
 button.addEventListener('click', function () {
@@ -13,13 +16,15 @@ button.addEventListener('click', function () {
         if (userEmail.value === database[i]) {
             check = true;
             console.log('Access allowed');
-            document.getElementById('response').innerText = 'Access allowed';
+            responseEmail.classList.add('green');
+            document.querySelector('.responseEmail').innerText = 'Access allowed';
         }
     }
 
     if (check === false) {
         console.log('Access denied');
-        document.getElementById('response').innerText = 'Access denied';
+        responseEmail.classList.add('red');
+        document.querySelector('.responseEmail').innerText = 'Access denied';
     }
 }
 );
@@ -44,15 +49,21 @@ buttonDado.addEventListener('click', function () {
 
     if (dadoGiocatore > dadoComputer) {
         console.log('Hai vinto');
-        document.getElementById('dadoGiocatore').innerText = 'Hai vinto';
+        document.getElementById('dadoGiocatore').innerText = ('il tuo numero è: ' + dadoGiocatore);
+        document.getElementById('dadoComputer').innerText = ('il numero del computer è: ' + dadoComputer);
+        document.getElementById('responseDado').innerText = ('Hai vinto!')
     }
     else if (dadoGiocatore < dadoComputer) {
         console.log('Hai perso')
-        document.getElementById('dadoGiocatore').innerText = 'Hai perso';
+        document.getElementById('dadoGiocatore').innerText = ('Hai perso' + 'il tuo numero è: ' + dadoGiocatore);
+        document.getElementById('dadoComputer').innerText = ('il numero del computer è: ' + dadoComputer);
+        document.getElementById('responseDado').innerText = ('Hai perso!')
     }
     else {
         console.log('Pareggio');
-        document.getElementById('dadoGiocatore').innerText = 'Pareggio, ritenta!';
+        document.getElementById('dadoGiocatore').innerText = ('Pareggio, ritenta!' + 'il tuo numero è: ' + dadoGiocatore);
+        document.getElementById('dadoComputer').innerText = ('il numero del computer è: ' + dadoComputer);
+        document.getElementById('responseDado').innerText = ('Pareggio!')
     }
 });
 
